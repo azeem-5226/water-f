@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #123B5D;
+  --color-primary-dark: #0A2338;
+  --color-primary-light: #1D5380;
+  --color-accent: #087E8B;
+  --color-accent-hover: #06646F;
+  --color-accent-light: #E0F4F7;
+  --color-accent-muted: #119DA4;
+  --color-pageBg: #E8F7FA;
+  --color-cardBg: #FFFFFF;
+  --color-bookBtn: #F4B942;
+  --color-bookBtn-hover: #E3A730;
+  --color-bookBtn-active: #CE9322;
+  --color-textMuted: #4B6D84;
+
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  --shadow-card: 0 8px 30px rgba(18, 59, 93, 0.08);
+  --shadow-card-hover: 0 16px 40px rgba(18, 59, 93, 0.14);
+  --shadow-gold: 0 8px 24px rgba(244, 185, 66, 0.4);
+  --shadow-gold-hover: 0 12px 32px rgba(244, 185, 66, 0.55);
+}
+
+/* ==========================================================================
+   WATER FILTER CARE - DESIGN SYSTEM & THEME TOKENS
+   Primary: #123B5D
+   Accent: #087E8B
+   Background: #E8F7FA
+   Cards: #FFFFFF
+   Book Service Button: #F4B942
+   ========================================================================== */
+
+:root {
+  --color-primary: #123B5D;
+  --color-primary-dark: #0A2338;
+  --color-primary-light: #1D5380;
+  --color-accent: #087E8B;
+  --color-accent-hover: #06646F;
+  --color-accent-light: #E0F4F7;
+  --color-bg: #E8F7FA;
+  --color-card: #FFFFFF;
+  --color-book-btn: #F4B942;
+  --color-book-btn-hover: #E3A730;
+  --color-book-btn-text: #123B5D;
+  --color-text-muted: #4B6D84;
+}
+
+body {
+  background-color: #E8F7FA;
+  color: #123B5D;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Atmospheric Ambient Glow */
+.bg-mesh-water {
+  background: radial-gradient(circle at 50% 0%, rgba(8, 126, 139, 0.12) 0%, rgba(232, 247, 250, 0) 70%),
+              radial-gradient(circle at 90% 40%, rgba(18, 59, 93, 0.05) 0%, transparent 60%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #E8F7FA;
+}
+::-webkit-scrollbar-thumb {
+  background: #087E8B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06646F;
+}
+
+/* Smooth Golden Button Glow Animation */
+.btn-book-service {
+  background-color: #F4B942 !important;
+  color: #123B5D !important;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(244, 185, 66, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btn-book-service:hover {
+  background-color: #E3A730 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(244, 185, 66, 0.55);
+}
+.btn-book-service:active {
+  transform: translateY(0);
+}
+.btn-book-service::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-20deg);
+  transition: 0.75s ease;
+}
+.btn-book-service:hover::after {
+  left: 140%;
+}
+
+/* TDS Slider custom track */
+.tds-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #087E8B 0%, #10B981 25%, #3B82F6 45%, #F4B942 70%, #EF4444 100%);
+  outline: none;
+}
+.tds-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid #123B5D;
+  cursor: grab;
+  box-shadow: 0 2px 8px rgba(18, 59, 93, 0.3);
+  transition: transform 0.15s ease;
+}
+.tds-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
