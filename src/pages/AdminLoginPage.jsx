@@ -6,8 +6,8 @@ import { authService } from '../services/authService';
 export default function AdminLoginPage() {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
-    email: 'admin@watercare.local',
-    password: 'admin123',
+    email: '',
+    password: '',
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -90,7 +90,7 @@ export default function AdminLoginPage() {
                 required
                 value={credentials.email}
                 onChange={handleChange}
-                placeholder="admin@watercare.local"
+                placeholder="name@example.com"
                 className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-primary/20 bg-pageBg/40 focus:bg-white text-sm font-medium focus:outline-none focus:border-accent"
               />
             </div>
@@ -125,13 +125,6 @@ export default function AdminLoginPage() {
             </button>
           </div>
         </form>
-
-        <div className="mt-6 pt-5 border-t border-gray-100 text-center">
-          <p className="text-[11px] text-textMuted">
-            Demo credentials pre-filled: <br />
-            <code className="text-primary font-bold bg-pageBg px-1.5 py-0.5 rounded">admin@watercare.local</code> / <code className="text-primary font-bold bg-pageBg px-1.5 py-0.5 rounded">admin123</code>
-          </p>
-        </div>
 
       </div>
     </div>
